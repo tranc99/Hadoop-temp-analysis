@@ -20,6 +20,7 @@ public class MaxMonthTemp {
     Job job = Job.getInstance(conf, "Monthly Max Temp");
     job.setJarByClass(MaxMonthTemp.class);
     job.setMapperClass(MaxTempMapper.class);
+    job.setCombinerClass(MaxTempReducer.class);
     job.setReducerClass(MaxTempReducer.class);
 
     job.setOutputKeyClass(Text.class);
